@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { siteConfig } from "@/config/site";
 
 export function Hero() {
   return (
@@ -11,18 +12,17 @@ export function Hero() {
         </Badge>
 
         <h1 className="text-balance text-4xl font-bold tracking-tight md:text-6xl">
-          Generate stunning images from text in seconds
+          {siteConfig.slogan}
         </h1>
 
         <p className="mt-5 text-pretty text-lg text-muted-foreground md:text-xl">
-          Create photorealistic, anime, 3D, and stylized visuals. Perfect for ads,
-          product mockups, and content — fast and consistent.
+          {siteConfig.description}
         </p>
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <Button size="lg">Start generating</Button>
+          <Button size="lg">{siteConfig.cta.primary}</Button>
           <Button size="lg" variant="outline">
-            View examples
+            {siteConfig.cta.secondary}
           </Button>
         </div>
 
@@ -43,7 +43,6 @@ export function Hero() {
           </div>
 
           <div className="mt-3 overflow-hidden rounded-xl border">
-            {/* 用渐变占位，Day3会换成真实示例图或组件 */}
             <div className="aspect-square w-full bg-gradient-to-br from-muted to-background" />
           </div>
 
